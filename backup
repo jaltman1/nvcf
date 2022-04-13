@@ -1,11 +1,3 @@
-" n  Normal mode map. Defined using ':nmap' or ':nnoremap'.
-" i  Insert mode map. Defined using ':imap' or ':inoremap'.
-" v  Visual and select mode map. Defined using ':vmap' or ':vnoremap'.
-" x  Visual mode map. Defined using ':xmap' or ':xnoremap'.
-" s  Select mode map. Defined using ':smap' or ':snoremap'.
-" c  Command-line mode map. Defined using ':cmap' or ':cnoremap'.
-" o  Operator pending mode map. Defined using ':omap' or ':onoremap'.
-
 syntax enable
 set autoindent
 set expandtab
@@ -21,14 +13,3 @@ set cursorline
 set number relativenumber
 set mouse=a
 set scrolloff=5
-
-
-" Key remaps
-
-call plug#begin()
-
-" General
-
-
-
-call plug#end()

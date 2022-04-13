@@ -13,4 +13,5 @@ Plug('junegunn/fzf', {
 vim.call('plug#end')
 
 require('keymaps')
+vim.cmd 'source ~/.config/nvim/backup'
 
