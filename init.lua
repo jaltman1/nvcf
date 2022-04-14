@@ -1,4 +1,3 @@
-
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
@@ -9,9 +8,22 @@ Plug('junegunn/fzf', {
 		vim.call('fzf#install()')
 	end
 })
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['TSUpdate']})
+Plug('folke/tokyonight.nvim', { branch = 'main' })
 
 vim.call('plug#end')
 
 require('keymaps')
-vim.cmd 'source ~/.config/nvim/backup'
+require('basic')
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+  indent = {
+      enable = true
+  }
+}
+
+vim.g.tokyonight_style = "night"
+vim.cmd[[colorscheme tokyonight]]
 
