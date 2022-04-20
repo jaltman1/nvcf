@@ -14,3 +14,8 @@ g.cursorline = true
 g.number = true
 g.relativenumber = true
 g.scrolloff = 5
+
+local set = vim.api.nvim_set_keymap
+local opts = { noremap = true }
+set('n', ',p', ':FZF<Enter>', opts)
+set('i', 'jj', '<Esc>', opts)
