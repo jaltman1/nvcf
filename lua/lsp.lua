@@ -93,8 +93,11 @@ end
 
 -- setup languages 
 -- GoLang
+-- disable vim-go overlapping features
+vim.g.go_code_completion_enabled = 0
+vim.g.go_gopls_enabled = 1
 nvim_lsp['gopls'].setup{
-  cmd = {'gopls'},
+  cmd = {'gopls', '-remote=auto'},
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -111,4 +114,6 @@ nvim_lsp['gopls'].setup{
     usePlaceholders = true,
   }
 }
+
+
 
