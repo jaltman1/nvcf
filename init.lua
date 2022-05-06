@@ -1,4 +1,3 @@
-
 require('plugins')
 require('lsp')
 require('vim-go-keymaps')
@@ -29,6 +28,7 @@ vim.g.tokyonight_style="night"
 
 
 require('nvim-treesitter.configs').setup {
+  ensure_installed = "all",
   highlight = {
     enable = true,
   },
