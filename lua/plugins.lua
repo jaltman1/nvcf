@@ -5,10 +5,16 @@ return require('packer').startup(function(use)
 
     --theme
     use 'folke/tokyonight.nvim'
+    vim.cmd[[colorscheme tokyonight]]
+    vim.g.tokyonight_style="night"
+
+    -- UI
+    use 'preservim/nerdtree'
+    vim.api.nvim_set_keymap('n', ',n', ":NERDTree<Enter>", { noremap = true })
 
     --fuzzy find
     use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
-	use {'junegunn/fzf.vim'}
+    use {'junegunn/fzf.vim'}
     
     --lsp
     use 'neovim/nvim-lspconfig'
@@ -29,6 +35,15 @@ return require('packer').startup(function(use)
 
     -- langauage parsing
     use 'nvim-treesitter/nvim-treesitter'
+    require('nvim-treesitter.configs').setup {
+      ensure_installed = "all",
+      highlight = {
+        enable = true,
+      },
+      indent = {
+          enable = true
+      }
+    }
 
     if packer_bootstrap then
         require('packer').sync()
