@@ -19,3 +19,8 @@ local set = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 set('n', ',p', ':FZF<Enter>', opts)
 set('i', 'jj', '<Esc>', opts)
+
+set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)

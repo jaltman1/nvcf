@@ -13,8 +13,10 @@ return require('packer').startup(function(use)
     vim.api.nvim_set_keymap('n', ',n', ":NERDTree<Enter>", { noremap = true })
 
     --fuzzy find
-    use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
-    use {'junegunn/fzf.vim'}
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
     
     --lsp
     use 'neovim/nvim-lspconfig'
